@@ -12,12 +12,12 @@
 | 一句话指令 | 你得到什么 | 时间 |
 |---|---|---|
 | `/analyze-product Notion` | Notion 的完整产品考古报告（前世今生未来） | 30 分钟 |
-| `/quick-scan 飞书` | 飞书的精简速览卡 | 10 分钟 |
-| `/compare Notion vs Coda vs Roam` | 三个产品的全维度对比 | 20 分钟 |
-| `/founder 张小龙` | 张小龙的决策风格画像 | 15 分钟 |
+| `/quick-scan Linear` | Linear 的精简速览卡 | 10 分钟 |
+| `/compare Figma vs Sketch vs Framer` | 三个产品的全维度对比 | 20 分钟 |
+| `/founder Sam Altman` | Sam Altman 的决策风格画像 | 15 分钟 |
 | `/weekly-radar` | 你关注领域的本周动态 | 5 分钟 |
-| 直接说"分析抖音" | 自动触发 product-archaeology skill | 30 分钟 |
-| 直接说"写个 PRD" | 自动触发 prd-writer skill（先问 3-5 个澄清问题） | 15 分钟 |
+| 直接说"分析 Figma" | 自动触发「产品考古」skill | 30 分钟 |
+| 直接说"写个 PRD" | 自动触发「PRD编写」skill（先问 3-5 个澄清问题） | 15 分钟 |
 
 ---
 
@@ -31,17 +31,22 @@ pm-os/
 ├── learner.md                         # 学习日志（Claude 自维护）
 ├── install.sh                         # 一键安装脚本
 ├── .claude/
-│   ├── skills/                        # 9 个核心 skill
-│   │   ├── product-archaeology/       # 🔥 产品考古（核心）
-│   │   ├── competitive-analysis/      # 🔥 竞品分析
-│   │   ├── company-deep-dive/         # 公司深度分析
-│   │   ├── founder-profile/           # 创始人画像
-│   │   ├── business-model-canvas/     # 商业画布
-│   │   ├── trend-forecaster/          # 趋势预测
-│   │   ├── prd-writer/                # PRD 撰写
-│   │   ├── user-research-synth/       # 用户研究综合
-│   │   └── metrics-definer/           # 指标定义
-│   ├── agents/                        # 6 个子智能体（全中文命名）
+│   ├── skills/                        # 11 个核心 skill（全中文命名）
+│   │   ├── 产品考古/                  # 🔥 产品考古（核心）
+│   │   ├── 产品交互走查/              # 🔥 UX 审计
+│   │   ├── 竞品分析/                  # 🔥 竞品分析
+│   │   ├── 定价反推/                  # 🔥 定价反推 + 沉淀利润
+│   │   ├── 公司深度分析/              # 公司深度分析
+│   │   ├── 创始人画像/                # 创始人画像
+│   │   ├── 商业画布/                  # 商业画布
+│   │   ├── 趋势预测/                  # 趋势预测
+│   │   ├── PRD编写/                   # PRD 撰写
+│   │   ├── 用户研究综合/              # 用户研究综合
+│   │   └── 指标定义/                  # 指标定义
+│   ├── agents/                        # 9 个子智能体（全中文命名）
+│   │   ├── 产品体验员.md              # 实地走查（三件套之一）
+│   │   ├── 定价侦探.md                # 定价反推（三件套之一）
+│   │   ├── 用户声音侦察员.md          # 真实用户评论（三件套之一）
 │   │   ├── 市场研究员.md
 │   │   ├── 竞品分析师.md
 │   │   ├── 创始人调查员.md
@@ -56,7 +61,8 @@ pm-os/
 │       └── weekly-radar.md
 ├── context/                           # 你的领域知识
 │   ├── watchlist.md                   # 关注雷达列表
-│   └── glossary.md                    # 术语表
+│   ├── glossary.md                    # 术语表
+│   └── playwright-mcp-sop.md          # Playwright MCP 实地走查 SOP
 ├── templates/                         # 产物模板
 │   ├── product-archaeology-template.md
 │   ├── competitive-matrix-template.md
@@ -161,7 +167,7 @@ description: 详细写明触发场景和关键词
 touch .claude/agents/your-agent.md
 ```
 
-格式参考已有的 6 个 agent。
+格式参考已有的 9 个 agent。
 
 ### 添加新命令
 ```bash
