@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Local Claude state (含本地 token / 走查域名白名单 / 路径)
+.claude/settings.local.json
+.claude/.claude/
+
+# Playwright cache (cookies / sessions / 持久化登录态)
+.playwright-mcp/
+
+# Outputs (个人/商业分析产物，本地保留，不上 GitHub)
+outputs/*
+!outputs/.gitkeep
+
+# Screenshots
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Editor
+.idea/
+.vscode/
+
+# Node
+node_modules/
+*.log
